@@ -13,9 +13,13 @@ editor: visual
 library(tidyverse)
 library(nycflights13)
 
-#The line below renames the first 10 columns of flights and prints the flights data set with the arrival times arranged in ascending order
+#The line below renames the first 10 columns of flights and prints the flights data set
+#with the arrival times arranged in ascending order
 
-flights |> rename(Year = year, Month = month, Day = day, Dep_Time = dep_time, Sched_Dep_Time = sched_dep_time, Dep_Delay = dep_delay, Arr_Time = arr_time, Sched_Arr_Time = sched_arr_time, Arr_Delay = arr_delay, Carrier = carrier) |> arrange(Arr_Time)
+flights |> rename(Year = year, Month = month, Day = day, Dep_Time = dep_time,
+                  Sched_Dep_Time = sched_dep_time, Dep_Delay = dep_delay,
+                  Arr_Time = arr_time, Sched_Arr_Time = sched_arr_time,
+                  Arr_Delay = arr_delay, Carrier = carrier) |> arrange(Arr_Time)
 
 
 
@@ -31,10 +35,12 @@ flights |> rename(Year = year, Month = month, Day = day, Dep_Time = dep_time, Sc
 flight1 <- flights |> filter(month == 1)
 
 #Gets the average distance of each carrier
-carrier_dist_vec_mean <- flight1 |> group_by(carrier) |> summarise(MEAN = mean(distance, na.rm = TRUE ))
+carrier_dist_vec_mean <- flight1 |> group_by(carrier) |>
+  summarise(MEAN = mean(distance, na.rm = TRUE ))
 
 #Gets the standard deviation of the distance for each carrier
-carrier_dist_vec_sd <- flight1 |> group_by(carrier) |> summarise(SD = sd(distance, na.rm = TRUE))
+carrier_dist_vec_sd <- flight1 |> group_by(carrier) |> 
+  summarise(SD = sd(distance, na.rm = TRUE))
 
 #Creates one tibble with both the mean and sd distance for each carrier
 dist_tbl <- carrier_dist_vec_mean |> left_join(carrier_dist_vec_sd)
@@ -55,7 +61,11 @@ carrierOO <- flight1 |> filter(carrier == 'OO') |> select(carrier, distance)
 
 carrierOO
 
-print('Explanation of NA: Carrier OO has NA as the standard deviation of the distance, that is because as shown by the code above, there is only one entry thus the standard deviation can\'t be calculated since sd is a measure of how spread apart data points are from each other, with only one distance entry there is no spread.')
+print('Explanation of NA: Carrier OO has NA as the standard deviation of the distance,
+      that is because as shown by the code above, there is only one entry thus the 
+      standard deviation can\'t be calculated since sd is a measure of how spread 
+      apart data points are from each other, with only one distance entry there is
+      no spread.')
 
 
 ########## ZERO ##############
@@ -65,7 +75,10 @@ carrierYV <- flight1 |> filter(carrier == 'YV') |> select(carrier, distance)
 carrierYV
 
 
-print('Explanaition of ZERO: The standard deviation of the distance for the YV carrier is zero because as displayed by the code above, all the distance entries are 229, sd is a measure of how spread apart entries are from each other, in this case they are all the same thus resulting in no spread or a spread of zero.')
+print('Explanaition of ZERO: The standard deviation of the distance for the YV carrier
+      is zero because as displayed by the code above, all the distance entries are 229,
+      sd is a measure of how spread apart entries are from each other, in this case
+      they are all the same thus resulting in no spread or a spread of zero.')
 ```
 
 ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION FOUR** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
@@ -73,7 +86,8 @@ print('Explanaition of ZERO: The standard deviation of the distance for the YV c
 ```{r}
 
 #Getting the Average Departure delay for each carrier in each month in the long format
-switched <- flights |> group_by(carrier, month) |> summarise(Av_Dep_Delay = mean(dep_delay, na.rm = TRUE)) 
+switched <- flights |> group_by(carrier, month) |>
+  summarise(Av_Dep_Delay = mean(dep_delay, na.rm = TRUE)) 
 
 #Converting into wide data
 switched2 <- switched |> pivot_wider(names_from = carrier, values_from = Av_Dep_Delay)
@@ -108,7 +122,8 @@ prop_Delayed
 
 ```{r}
 
-routes <- flights |> group_by(origin, dest) |> summarize(n_airlines = n_distinct(carrier)) |> filter(n_airlines > 1)
+routes <- flights |> group_by(origin, dest) |> 
+  summarize(n_airlines = n_distinct(carrier)) |> filter(n_airlines > 1)
 
 routes
 
@@ -121,7 +136,8 @@ routes
 joint <- routes |> left_join(flights, by = join_by(origin, dest))
 
 #Grouping to get each route+carrier combo then calc it's average arrival delay
-joint2 <- joint |> group_by(origin, dest, carrier) |> summarise(Av_Arr_Delay = mean(arr_delay, na.rm = TRUE))
+joint2 <- joint |> group_by(origin, dest, carrier) |>
+  summarise(Av_Arr_Delay = mean(arr_delay, na.rm = TRUE))
 
 joint2
 ```
@@ -130,17 +146,21 @@ joint2
 
 # Airline with the best average arrival delay
 
-best <- joint2 |> group_by(origin, dest) |> summarise(best_av_arr_delay = min(Av_Arr_Delay))
+best <- joint2 |> group_by(origin, dest) |>
+  summarise(best_av_arr_delay = min(Av_Arr_Delay))
 
-best2 <- best |> left_join(joint2, join_by(best_av_arr_delay == Av_Arr_Delay)) |> select(!origin.y) |> select(!dest.y)
+best2 <- best |> left_join(joint2, join_by(best_av_arr_delay == Av_Arr_Delay)) |>
+  select(!origin.y) |> select(!dest.y)
 
 best2
 
 #Airline with the worst arrival delay
 
-worst <- joint2 |> group_by(origin, dest) |> summarise(worst_av_arr_delay = max(Av_Arr_Delay))
+worst <- joint2 |> group_by(origin, dest) |> 
+  summarise(worst_av_arr_delay = max(Av_Arr_Delay))
 
-worst2 <- worst |> left_join(joint2, join_by(worst_av_arr_delay == Av_Arr_Delay)) |> select(!origin.y) |> select(!dest.y)
+worst2 <- worst |> left_join(joint2, join_by(worst_av_arr_delay == Av_Arr_Delay)) |> 
+  select(!origin.y) |> select(!dest.y)
 
 worst2
 
@@ -158,7 +178,8 @@ results
 
 results2 <- results |> mutate(diff = sqrt((best_av_arr_delay - worst_av_arr_delay)**2)) 
 
-results3 <- results2 |> summarise(greatest_diff = max(diff, na.rm = TRUE)) |> left_join(results2, join_by(greatest_diff == diff ))
+results3 <- results2 |> summarise(greatest_diff = max(diff, na.rm = TRUE)) |>
+  left_join(results2, join_by(greatest_diff == diff ))
 
 results3
 
@@ -175,7 +196,10 @@ reason2 <- reason |> summarise(terrible = max(worst_av_arr_delay, na.rm = TRUE))
 reason2
 
 
-print('The above code shows that the worst average arrival delay was 128, it so happens that this corresponds with the route with the greatest diff (it\'s an outlier), their average arrival delay was too much thus creating the large difference between their best and worst av. arr delay.')
+print('The above code shows that the worst average arrival delay was 128, 
+      it so happens that this corresponds with the route with the greatest
+      diff (it\'s an outlier), their average arrival delay was too much thus
+      creating the large difference between their best and worst av. arr delay.')
 
 ```
 
@@ -286,7 +310,8 @@ see <- given_data |> view_cols()
 
 print('LIST OF ERRORS: ')
 
-print('♡From the above we can see that the gender column has a typo: \'femal\' instead of \'female\'. ')
+print('♡From the above we can see that the gender column has a typo: \'femal\'
+      instead of \'female\'. ')
 
 print('♡The height column has some missing entries.')
 
