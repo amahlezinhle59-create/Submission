@@ -3,7 +3,7 @@
     "path": "C:/Users/amahl/OneDrive - University of Cape Town/4th Year Modules/Statistical Computing/1st Week/Submission/Completed/Day Four Practical.qmd",
     "project_path": "Day Four Practical.qmd",
     "type": "quarto_markdown",
-    "hash": "1245277934",
+    "hash": "3033694749",
     "contents": "",
     "dirty": false,
     "created": 1770642177458.0,
@@ -16,16 +16,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "32:0",
+        "rmdVisualModeLocation": "32:7",
         "cursorPosition": "0,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1770644502,
+    "lastKnownWriteTime": 1770644937,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1770644502523,
+    "last_content_update": 1770644937679,
     "read_only": false,
     "read_only_alternatives": []
 }
