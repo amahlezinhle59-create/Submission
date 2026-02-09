@@ -1,13 +1,13 @@
 ---
-title: "Practical Day Four"
-author: "Amahle"
+title: "Practical: Day Four"
+author: "Amahle Nzimande"
 format: pdf
 editor: visual
 ---
 
 ## 
 
-**QUESTION ONE**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION ONE** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 
@@ -24,7 +24,7 @@ flights |> rename(Year = year, Month = month, Day = day, Dep_Time = dep_time, Sc
 
 ```
 
-**QUESTION TWO**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION TWO** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 
@@ -47,7 +47,7 @@ dist_tbl |> arrange(MEAN)
 
 ```
 
-**QUESTION THREE**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION THREE** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 
@@ -57,7 +57,7 @@ carrierOO <- flight1 |> filter(carrier == 'OO') |> select(carrier, distance)
 
 carrierOO
 
-# Explanation of NA: Carrier OO has NA as the standard deviation of the distance, that is because as shown by the code above, there is only one entry thus the standard deviation can't be calculated since sd is a measure of how spread apart data points are from each other, with only one distance entry there is no spread.
+print('Explanation of NA: Carrier OO has NA as the standard deviation of the distance, that is because as shown by the code above, there is only one entry thus the standard deviation can\'t be calculated since sd is a measure of how spread apart data points are from each other, with only one distance entry there is no spread.')
 
 
 ########## ZERO ##############
@@ -67,23 +67,25 @@ carrierYV <- flight1 |> filter(carrier == 'YV') |> select(carrier, distance)
 carrierYV
 
 
-# Explanaition of ZERO: The standard deviation of the distance for the YV carrier is zero because as displayed by the code above, all the distance entries are 229, sd is a measure of how spread apart entries are from each other, in this case they are all the same thus resulting in no spread or a spread of zero.
+print('Explanaition of ZERO: The standard deviation of the distance for the YV carrier is zero because as displayed by the code above, all the distance entries are 229, sd is a measure of how spread apart entries are from each other, in this case they are all the same thus resulting in no spread or a spread of zero.')
 ```
 
-**QUESTION FOUR**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION FOUR** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 
-#Getting the Average Departure delay for each carrier in each month in the lond format
+#Getting the Average Departure delay for each carrier in each month in the long format
 switched <- flights |> group_by(carrier, month) |> summarise(Av_Dep_Delay = mean(dep_delay, na.rm = TRUE)) 
 
 #Converting into wide data
 switched2 <- switched |> pivot_wider(names_from = carrier, values_from = Av_Dep_Delay)
 
+switched2
+
 
 ```
 
-**QUESTION FIVE**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION FIVE** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 
@@ -99,11 +101,12 @@ prop_Delayed <- meet_Condition/total_Flights
 #Renaming the column
 prop_Delayed <- prop_Delayed |> rename(Prop_Delayed = n)
 
+prop_Delayed
 
 
 ```
 
-**QUESTION SIX**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION SIX** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 
@@ -174,11 +177,11 @@ reason2 <- reason |> summarise(terrible = max(worst_av_arr_delay, na.rm = TRUE))
 reason2
 
 
-# The above code shows that the worst average arrival delay was 128, it so happens that this corresponds with the route with the greatest diff (it's an outlier), their average arrival delay was too much thus creating the large difference between their best and worst av. arr delay.
+print('The above code shows that the worst average arrival delay was 128, it so happens that this corresponds with the route with the greatest diff (it\'s an outlier), their average arrival delay was too much thus creating the large difference between their best and worst av. arr delay.')
 
 ```
 
-**QUESTION SEVEN**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION SEVEN** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 
@@ -283,13 +286,15 @@ NA, 77, 80, 115, 85, 88, 109, NA, 71, 90, 94, 91, 87, 113, 93,
 library(UtilsDataRSV)
 see <- given_data |> view_cols()
 
-print('From the above we can see that the gender column has a typo: \'femal\' instead of \'female\'. ')
+print('LIST OF ERRORS: ')
 
-print('The height column has some missing entries.')
+print('♡From the above we can see that the gender column has a typo: \'femal\' instead of \'female\'. ')
 
-print('The disease_status column has a typo, \'Healthy\' and \'healthy\'.')
+print('♡The height column has some missing entries.')
 
-print('The glucose column has some missing entries.')
+print('♡The disease_status column has a typo, \'Healthy\' and \'healthy\'.')
+
+print('♡The glucose column has some missing entries.')
 
 
 ```

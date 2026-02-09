@@ -7,10 +7,9 @@ book:
   date: "2026/02/09"
   chapters:
     - index.qmd
-    - Project_One.qmd
-    - Day3_Prac_Q3andQ4.qmd
-    - Practical_Day_Four.qmd
-    
+    - Project One.qmd
+    - Day Three Practical Q3 & Q4.qmd
+    - Day Four Practical.qmd
 
 format:
   html:

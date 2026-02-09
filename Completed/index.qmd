@@ -1,9 +1,9 @@
-# Preface {.unnumbered}
+# Assignment One  {.unnumbered}
 
-This is a Quarto book.
+## Welcome
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Dear fellow survivor of this course ♡
 
-```{r}
-1 + 1
-```
+If you are reading this, we have both made it this far, congratulations to us! I hope this assignment makes sense, runs without errors, and causes minimal emotional damage.
+
+May your marking be fair, your coffee strong, and your rubric generous.

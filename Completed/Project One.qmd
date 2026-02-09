@@ -4,7 +4,7 @@ author: "Amahle Nzimande"
 format: pdf
 ---
 
-**QUESTION ONE**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION ONE** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 
@@ -28,7 +28,7 @@ print(paste0('In total there are ', sum, ' rows with missing information.' ))
 
 ```
 
-**QUESTION TWO**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION TWO** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 my_table <- data.frame(
@@ -42,8 +42,7 @@ my_table <- data.frame(
 print(my_table)
 ```
 
-**QUESTION THREE**
-
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION THREE** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 data(cars)
@@ -65,11 +64,9 @@ print(my_funct(X, Y))
 
 ```
 
-
-**QUESTION FOUR**
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION FOUR** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
 ```{r}
 model <- lm(cars$dist~cars$speed, data=cars )
 summary(model)
 ```
-
