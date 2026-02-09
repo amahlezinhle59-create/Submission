@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "Completed"
-  author: "Norah Jones"
+  title: "Final Version of Assignment One"
+  author: "Amahle Nzimande"
   date: "2026/02/09"
   chapters:
     - index.qmd

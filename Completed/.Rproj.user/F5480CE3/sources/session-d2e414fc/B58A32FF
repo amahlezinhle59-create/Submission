@@ -3,7 +3,7 @@
     "path": "C:/Users/amahl/OneDrive - University of Cape Town/4th Year Modules/Statistical Computing/1st Week/Submission/Completed/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "163785203",
+    "hash": "3171877716",
     "contents": "",
     "dirty": false,
     "created": 1770635705936.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "14,7",
-        "scrollLine": "6"
+        "cursorPosition": "4,41",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1770643801,
+    "lastKnownWriteTime": 1770644208,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1770643801230,
+    "last_content_update": 1770644208050,
     "read_only": false,
     "read_only_alternatives": []
 }
