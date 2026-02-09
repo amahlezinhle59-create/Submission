@@ -7,11 +7,10 @@ book:
   date: "2026/02/09"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
+    - Project_One.qmd
+    - Day3_Prac_Q3andQ4.qmd
+    - Practical_Day_Four.qmd
+    
 
 format:
   html:
