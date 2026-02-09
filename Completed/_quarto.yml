@@ -10,7 +10,6 @@ book:
     - Project One.qmd
     - Day Three Practical Q3 & Q4.qmd
     - Day Four Practical.qmd
-
 format:
   html:
     theme:
