@@ -1,0 +1,72 @@
+---
+title: "Project_One"
+author: "Amahle Nzimande"
+format: pdf
+---
+
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION ONE** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
+
+```{r}
+
+down <- nrow(airquality)
+across <- ncol(airquality)
+sum <- 0
+
+print('The following rows have missing information: ')
+
+for(i in 1:down){
+  for(j in 1:across){
+    if(is.na(airquality[i,j])){
+      sum <- sum + 1
+      print(i)
+      break}
+  }
+}
+
+print(paste0('In total there are ', sum, ' rows with missing information.' ))
+
+
+```
+
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION TWO** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
+
+```{r}
+my_table <- data.frame(
+  Column = c('Temperature', 'Ozone'),
+  Mean = c(mean(airquality[,4]), mean(airquality[,1], na.rm=TRUE)),
+  SD = c(sd(airquality[,4]), sd(airquality[,1], na.rm=TRUE)),
+  Min = c(min(airquality[,4]), min(airquality[,1], na.rm=TRUE)),
+  Max = c(max(airquality[,4]), max(airquality[,1], na.rm=TRUE))
+)
+
+print(my_table)
+```
+
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION THREE** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
+
+```{r}
+data(cars)
+
+Y <- cars$dist
+X <- cbind(1, cars$speed)
+
+my_funct <- function(design, response) {
+  
+  a <- t(design)%*%design
+  b <- solve(a)
+  c <- t(design)%*%response
+  d <- b%*%c
+  
+  return(d)
+}
+
+print(my_funct(X, Y))
+
+```
+
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡ **QUESTION FOUR** ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
+
+```{r}
+model <- lm(cars$dist~cars$speed, data=cars )
+summary(model)
+```

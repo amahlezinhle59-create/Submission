@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "Completed"
+  author: "Norah Jones"
+  date: "2026/02/09"
+  chapters:
+    - index.qmd
+    - Project One.qmd
+    - Day Three Practical Q3 & Q4.qmd
+    - Day Four Practical.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
