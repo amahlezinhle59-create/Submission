@@ -1,5 +1,5 @@
 ---
-title: "Day3 Prac Questions 4 and 5"
+title: "Day Three Practical Q3 & Q4"
 author: "Amahle Nzimande"
 format: pdf
 editor: visual

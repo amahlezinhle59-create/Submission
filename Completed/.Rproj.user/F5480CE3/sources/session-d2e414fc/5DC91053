@@ -3,7 +3,7 @@
     "path": "C:/Users/amahl/OneDrive - University of Cape Town/4th Year Modules/Statistical Computing/1st Week/Submission/Completed/Project One.qmd",
     "project_path": "Project One.qmd",
     "type": "quarto_markdown",
-    "hash": "359431314",
+    "hash": "757771927",
     "contents": "",
     "dirty": false,
     "created": 1770643210230.0,
@@ -16,16 +16,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "cursorPosition": "46,0",
+        "cursorPosition": "0,0",
         "scrollLine": "0",
-        "rmdVisualModeLocation": "1255:1272"
+        "rmdVisualModeLocation": "22:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1770643765,
+    "lastKnownWriteTime": 1770644549,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1770643765,
+    "last_content_update": 1770644549847,
     "read_only": false,
     "read_only_alternatives": []
 }
